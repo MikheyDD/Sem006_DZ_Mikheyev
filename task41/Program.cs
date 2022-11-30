@@ -4,11 +4,23 @@
 
 Console.WriteLine("Введите числа через запятую");
 var nums = Console.ReadLine();
-string[] numsArray = nums.Split(",");
-int[] numsArrayConvert = ConvertNums(numsArray);
-Print(numsArrayConvert);
-Console.WriteLine();
-Console.WriteLine(GetCount(numsArrayConvert));
+if (nums is string)
+{
+    string[] numsArray = nums.Split(",");
+    int[] numsArrayConvert = ConvertNums(numsArray);
+    Print(numsArrayConvert);
+    Console.WriteLine();
+    Console.WriteLine(GetCount(numsArrayConvert));
+}
+else 
+{
+    Console.WriteLine("неверный ввод чисел");
+}
+// string[] numsArray = nums.Split(",");
+// int[] numsArrayConvert = ConvertNums(numsArray);
+// Print(numsArrayConvert);
+// Console.WriteLine();
+// Console.WriteLine(GetCount(numsArrayConvert));
 
 int GetCount(int[] arr)
 {
