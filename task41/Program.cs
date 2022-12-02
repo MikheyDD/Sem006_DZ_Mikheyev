@@ -4,23 +4,23 @@
 
 Console.WriteLine("Введите числа через запятую");
 var nums = Console.ReadLine();
-if (nums is string)
-{
-    string[] numsArray = nums.Split(",");
-    int[] numsArrayConvert = ConvertNums(numsArray);
-    Print(numsArrayConvert);
-    Console.WriteLine();
-    Console.WriteLine(GetCount(numsArrayConvert));
-}
-else 
-{
-    Console.WriteLine("неверный ввод чисел");
-}
-// string[] numsArray = nums.Split(",");
-// int[] numsArrayConvert = ConvertNums(numsArray);
-// Print(numsArrayConvert);
-// Console.WriteLine();
-// Console.WriteLine(GetCount(numsArrayConvert));
+// if (nums is string)
+// {
+//     string[] numsArray = nums.Split(",");
+//     int[] numsArrayConvert = ConvertNums(numsArray);
+//     Print(numsArrayConvert);
+//     Console.WriteLine();
+//     Console.WriteLine(GetCount(numsArrayConvert));
+// }
+// else 
+// {
+//     Console.WriteLine("неверный ввод чисел");
+// }
+string[] numsArray = nums.Split(",");
+int[] numsArrayConvert = ConvertNums(numsArray);
+Print(numsArrayConvert);
+Console.WriteLine();
+Console.WriteLine(GetCount(numsArrayConvert));
 
 int GetCount(int[] arr)
 {
@@ -52,3 +52,32 @@ void Print(int[] array)
         Console.Write($"{item}, ");
     }
 }
+
+
+
+
+// char[] separators = { ' ', ',' };
+//         var arrayOfEnteredText = Console.ReadLine()
+//             ?.Split(separators,
+//                 StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+
+// string numbers = Console.ReadLine();
+//     int[] arr = numbers.Split(' ').Select(int.Parse).ToArray();
+// вот так проще для понимания
+
+// var enteredNumbers = GetEnteredNumbers("Введите числа через пробел или запятую :");
+// static int[] GetEnteredNumbers(string outputText = "")
+//     {
+//         var arrayInts = Array.Empty<int>();
+//         Console.WriteLine(outputText);
+//         char[] separators = { ' ', ',' };
+//         var arrayOfEnteredText = Console.ReadLine()
+//             ?.Split(separators,
+//                 StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+//         if (arrayOfEnteredText != null)
+//         {
+//             arrayInts = Array.ConvertAll(arrayOfEnteredText, s => int.Parse(s));
+//         }
+//         return arrayInts;
+//     }
